@@ -8,4 +8,8 @@ public interface ClientiService {
     Clienti getClienteById(Integer idCliente) throws Exception;
 
     List<Clienti> getListaClientiByNomeAndCognome(String nome, String cognome) throws Exception;
+
+    List<Clienti> getAllClienti() throws Exception;
+
+
 }

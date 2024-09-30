@@ -14,6 +14,7 @@ public class ClientiServiceImpl implements ClientiService {
     @Autowired
     private ClientiRepository clientiRepository;
 
+
     @Override
     public Clienti getClienteById(Integer idCliente) throws Exception {
         Optional<Clienti> cliente = clientiRepository.findClientiByIdCliente(idCliente);
@@ -31,4 +32,14 @@ public class ClientiServiceImpl implements ClientiService {
         }
         throw new Exception("Cliente non trovato");
     }
+
+    @Override
+    public List<Clienti> getAllClienti() throws Exception {
+        List<Clienti> listaClienti = clientiRepository.findAll();  // Recupera tutti i clienti
+        if (!listaClienti.isEmpty()) {
+            return listaClienti;  // Restituisce la lista se non è vuota
+        }
+        throw new Exception("Nessun cliente trovato");  // Lancia un'eccezione se non ci sono clienti
+    }
+
 }

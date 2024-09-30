@@ -12,4 +12,7 @@ public interface ClientiRepository extends JpaRepository<Clienti, Integer> {
     Optional<Clienti> findClientiByIdCliente(Integer id);
 
     List<Clienti> findClientiByNomeIgnoreCaseAndCognomeIgnoreCase(String nome, String cognome);
+
+   List<Clienti> findAll();
+
 }

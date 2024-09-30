@@ -30,4 +30,13 @@ public class ClientiController {
         }
     }
 
+    @GetMapping("/lista-clienti")
+    public ResponseEntity<?> getListaClienti() {
+        try {
+            return new ResponseEntity<>(clientiService.getAllClienti(), HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+        }
+    }
+
 }
